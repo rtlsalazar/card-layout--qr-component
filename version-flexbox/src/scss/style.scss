@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@import "./_reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap");
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  Document global Styles */
+/* ---------------------------------------------------------------------------------------------- */
+:root * {
+  /* Text */
+  font-family: "Outfit";
+  font-size: 15px;
+  color: hsl(210, 100%, 10%);
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/*  Sections Styles */
+/* ---------------------------------------------------------------------------------------------- */
+main{ // fullscreen view
+  height: 100vh; 
+  display: grid;
+  place-items: center;
+  background-color: hsl(212, 45%, 89%);
+}
+
+section.qr-card{
+  /* Layout Model */
+  display: flex;
+  flex-direction: column;
+
+  /* Box Style */
+  width: min(95vw, 20rem);
+  padding: 1rem 1rem;
+  margin: 0.5rem;
+  border-radius: 1.25rem;
+  background-color: hsl(0, 0%, 100%);
+
+  /* Children */
+  > .qr-code{
+    /* Box Style */
+    border-radius: 0.85rem;
+  }
+
+  > .title{
+    /* Box Style */
+    padding-block-start: 20px; 
+    padding-block-end: 15px; 
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    /* Text Style */
+    color: hsl(0, 0, 10%);
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  > .body{
+    /* Box Style */
+    padding-block-end: 25px; 
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+
+    /* Text Style */
+    color: hsl(0, 0, 60%);
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+section.attribution address{
+  /* Layout Model */
+
+  /* Box Style */
+
+  /* Text Style */
+  color: hsl(0, 0, 40%);
+  text-align: center;
+
+  font-weight: 400;
+  font-size: 0.9rem;
+
+  /* Children */
+  > a{
+    /* Positioning */
+    position: relative;
+
+    /* Text Style */
+    font-weight: inherit;
+    font-size: inherit;
+    color:hsl(0, 0, 10%);;
+  
+    /* Behaviours */
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      background-color:  hsl(224, 100%, 61%);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    &:hover:after{
+      color: var(--val-text-muted-color);
+      width: 100%; /* expand the width to fill the link width on hover */
+      left: 0;
+      height: 3px; /* change the height to 3 px */
+    }
+  }
+}
